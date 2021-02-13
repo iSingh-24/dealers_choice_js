@@ -1,3 +1,60 @@
+
 body{
     font-family: verdana; 
+    color: white;
+    background-color:black;
 }
+
+.title{
+    color:Green;
+    
+}
+/* a{
+    background-color:pink;
+    font-weight: bold;
+} */
+
+
+.animes{
+    background-color: lightpink;
+    font-size: larger;
+    display:inline-block;
+    font-weight: bolder;
+}
+
+.characters{
+    background-color: yellow;
+    border:solid red 3px; 
+    display:inline-block;
+    color:blue;
+    font-family: 'Lucida Sans';
+    font-weight:bold;
+    font-size: larger;
+}
+
+.onePiece{ 
+    height:50%; 
+    width:20%;
+}
+
+.jujutsu{
+    height:50%;
+    width: 25%;
+}
+
+.AOT{
+    height: 50%;
+    width: 33%;
+}
+
+
+p{
+    color:red;
+}
+
+a{
+    /* text-decoration: none; */
+    color:blue;
+}
+
+
