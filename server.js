@@ -20,10 +20,8 @@ app.get('/', async(req, res, next)=>{
             </head>
             <body>
             <h1 class ="title">Epic Anime List</h1>
-            <img class= "onePiece" src="https://i.pinimg.com/originals/77/86/bd/7786bdded50f80f4e71979b281e0eb78.jpg">
-            <img class ="AOT" src = "https://c4.wallpaperflare.com/wallpaper/756/731/751/anime-attack-on-titan-eren-yeager-shingeki-no-kyojin-wallpaper-thumb.jpg">
-            <img class ="jujutsu" src = "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/4-jujutsu-kaisen-jonathan-dat.jpg">
-            <div class ="container1">
+           <br>
+           <br>
             <h2>Top 3 Anime</h2> 
             <ul>
             ${
@@ -37,7 +35,6 @@ app.get('/', async(req, res, next)=>{
                 `).join("")
             }
             </ul>
-            </div> 
             </body>
             </html>
         `)
@@ -47,6 +44,8 @@ app.get('/', async(req, res, next)=>{
     }
 })
 
+let img = `<img>`; 
+
 app.get('/animes/:id', async(req, res, next)=>{
     try{
 
@@ -55,11 +54,6 @@ app.get('/animes/:id', async(req, res, next)=>{
         ]
         
         const responses = await Promise.all(promises); 
-
-        //If you wanted to destructure and use it would be as follows
-        // const [animeResponse, charactersResponse] = await Promise.all(promises);
-        // const anime = animeResponse.rows[0];
-        // const characters = charactersResponse[1].rows; 
 
         const anime = responses[0].rows[0];
         
@@ -78,7 +72,12 @@ app.get('/animes/:id', async(req, res, next)=>{
                 characters.map(character => `
                 <li class="characters">
                   ${character.name}
-                </li>`).join("")
+                </li>
+                <li>
+                ${character.description}
+                </li>
+                `).join("")
+
             }
             </ul>
             </body>
